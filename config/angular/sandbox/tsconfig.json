@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@ciklum/ng-boilerplate": [
+        "../../dist/ng-boilerplate"
+      ],
+      "@ciklum/boilerplate": [
+        "../../dist/boilerplate"
+      ]
+    }
+  }
+}
