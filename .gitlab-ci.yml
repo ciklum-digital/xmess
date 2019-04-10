@@ -1,0 +1,92 @@
+before_script:
+- whoami
+- ./devops/ci/scripts/check-free-space.sh
+
+variables:
+  PKG_NAME: boilerplate
+  NG_PKG_NAME: ng-boilerplate
+
+stages:
+- lint
+- test
+- build
+- docs
+- publish
+- bump-version
+
+lint:
+  stage: lint
+  except:
+    variables:
+    - $CI_COMMIT_TAG =~ /.+/
+    - $CI_COMMIT_MESSAGE =~ /\d+\.\d+\.\d+/
+  script:
+  - ./devops/ci/scripts/lint.job.sh
+
+test:
+  stage: test
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  dependencies:
+  - lint
+  except:
+    variables:
+    - $CI_COMMIT_TAG =~ /.+/
+    - $CI_COMMIT_MESSAGE =~ /\d+\.\d+\.\d+/
+  script:
+  - ./devops/ci/scripts/test.job.sh
+  artifacts:
+    paths:
+    - coverage/
+    expire_in: 1h
+
+build:
+  stage: build
+  except:
+    variables:
+    - $CI_COMMIT_TAG =~ /.+/
+    - $CI_COMMIT_MESSAGE =~ /\d+\.\d+\.\d+/
+  script:
+  - ./devops/ci/scripts/build.job.sh
+  artifacts:
+    paths:
+    - dist/
+    expire_in: 1h
+
+bump-version:
+  stage: bump-version
+  except:
+    variables:
+    - $CI_COMMIT_TAG =~ /.+/
+    - $CI_COMMIT_MESSAGE =~ /\d+\.\d+\.\d+/
+  only:
+  - master
+  script:
+  - ./devops/ci/scripts/bump-version.job.sh
+  when: manual
+
+publish:
+  stage: publish
+  only:
+    variables:
+    - $CI_COMMIT_TAG =~ /\d+\.\d+\.\d+/
+  script:
+  - ./devops/ci/scripts/publish.job.sh
+  when: manual
+
+
+pages:
+  stage: docs
+  dependencies:
+  - test
+  script:
+  - mv coverage/ public/
+  artifacts:
+    paths:
+    - public
+    expire_in: 30 days
+  only:
+  - master
+  except:
+    variables:
+    - $CI_COMMIT_TAG =~ /.+/
+    - $CI_COMMIT_MESSAGE =~ /\d+\.\d+\.\d+/
