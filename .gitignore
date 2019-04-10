@@ -28,6 +28,7 @@
 # Misc
 /.sass-cache
 /connect.lock
+/public
 /coverage
 /libpeerconnection.log
 npm-debug.log

@@ -6,4 +6,5 @@ fi
 npm config set @ciklum:registry "https://registry.npmjs.org"
 npm config set "//registry.npmjs.org/:_authToken" $NPM_REGISTRY_TOKEN
 
+echo 'Installing NPM dependencies...';
 npm install

@@ -14,15 +14,10 @@ docker run \
     node:10 /bin/bash -c \
    "
         mkdir /tmp/build;
-        echo 'copy sources to docker';
         cp -a /tmp/src/. /tmp/build/;
-        echo 'go to copy path';
         cd /tmp/build;
-        echo 'installing...';
         ./devops/scripts/install.sh;
-        echo 'installing completed';
         npm run build;
-        echo 'build';
         chown -R $(id -u ${USER}):$(id -g ${USER}) ./dist
         cp -a ./dist /tmp/src
    "
