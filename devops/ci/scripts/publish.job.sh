@@ -22,7 +22,7 @@ docker run \
         chown -R $(id -u ${USER}):$(id -g ${USER}) /tmp/artifacts;
         cp -a /tmp/artifacts/. .;
 
-        ls;
+        cp ./dist/* ./;
 
         cp ./README.md ./dist/${PKG_NAME};
         cp ./README.md ./dist/${NG_PKG_NAME};
