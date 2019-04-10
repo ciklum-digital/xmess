@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "preinstall": "./devops/local/scripts/chmod-scripts.sh",
-    "install": "./devops/scripts/install.sh",
     "ng": "node node_modules/@angular/cli/bin/ng",
     "eslint": "node node_modules/eslint/bin/eslint",
     "jest": "node node_modules/jest/bin/jest",

@@ -30,7 +30,7 @@ module.exports = {
   moduleNameMapper: getTypescriptPaths(),
   globals: {
     'ts-jest': {
-      tsConfigFile: '<rootDir>/misc/angular/module/tsconfig.spec.json',
+      tsConfigFile: '<rootDir>/config/angular/module/tsconfig.spec.json',
     }
   }
 };
