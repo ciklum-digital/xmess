@@ -33,7 +33,7 @@ docker run \
         npm config set "//registry.npmjs.org/:_authToken" $NPM_REGISTRY_TOKEN;
         npm publish;
 
-        cd ./dist/${NG_PKG_NAME};
+        cd ../${NG_PKG_NAME};
         npm version $VERSION --no-git-tag-version;
         npm config set @ciklum:registry "https://registry.npmjs.org";
         npm config set "//registry.npmjs.org/:_authToken" $NPM_REGISTRY_TOKEN;
