@@ -6,6 +6,8 @@ fi
 
 source ./devops/ci/scripts/get-latest-version.sh
 
+echo "artifacts volume - $PKG_NAME-$CI_COMMIT_TAG";
+
 docker run \
     -e PKG_NAME \
     -e NG_PKG_NAME \
