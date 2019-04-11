@@ -1,0 +1,1 @@
+// directory for copy shared part for ng:build
