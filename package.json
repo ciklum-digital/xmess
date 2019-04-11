@@ -1,6 +1,6 @@
 {
   "name": "boilerplate",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "preinstall": "./devops/local/scripts/chmod-scripts.sh",
     "ng": "node node_modules/@angular/cli/bin/ng",
