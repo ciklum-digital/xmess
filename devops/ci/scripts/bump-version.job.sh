@@ -22,8 +22,6 @@ fi
 
 source ./devops/ci/scripts/get-latest-version.sh
 
-echo "artifacts volume - $PKG_NAME-v$VERSION";
-
 docker run \
     -v $PWD:/tmp/src \
     -v "$PKG_NAME-v$VERSION":/tmp/artifacts \
