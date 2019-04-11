@@ -19,3 +19,17 @@ fi
 
 ./devops/ci/scripts/login-to-git.sh
 ./devops/ci/scripts/bump-version.sh $bumpAction
+
+source ./devops/ci/scripts/get-latest-version.sh
+
+docker run \
+    -v $PWD:/tmp/src \
+    -v "$PKG_NAME-v$VERSION":/tmp/artifacts \
+    --name $CI_JOB_ID \
+    node:10 /bin/bash -c \
+   "
+    cp -a ./tmp/src/coverage /tmp/artifacts && \
+    cp -a ./tmp/src/dist /tmp/artifacts && \
+    cp -a ./tmp/src/package.json /tmp/artifacts && \
+    cp -a ./tmp/src/package-lock.json /tmp/artifacts
+   "

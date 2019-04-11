@@ -18,6 +18,6 @@ docker run \
         cd /tmp/build;
         ./devops/scripts/install.sh;
         npm run build;
-        chown -R $(id -u ${USER}):$(id -g ${USER}) ./dist
+        chown -R $(id -u ${USER}):$(id -g ${USER}) ./dist;
         cp -a ./dist /tmp/src
    "
