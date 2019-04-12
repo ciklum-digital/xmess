@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     XmessModule.forRoot({
-      id: 'xmess-ng',
+      id: 'xmess-angular',
       plugins: [
         new RepeaterPlugin(),
       ],

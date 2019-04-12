@@ -8,33 +8,53 @@ import { Xmess, RepeaterPlugin } from '@ciklum/boilerplate';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'ngmodule-boilerplate';
-  xmess = new Xmess({
-    xmessId: 'xmess-plain',
+  private messages = {
+    angular: [],
+    javascript: [],
+  };
+
+  private xmess = new Xmess({
+    id: 'xmess-javascript',
     plugins: [
       new RepeaterPlugin(),
     ],
   });
 
-  constructor(
-    private xmessService: XmessService
-  ) {
+  constructor(private xmessService: XmessService) {}
+
+  public ngOnInit() {
+    this.subscribeToRandomMessages();
+    this.runRandomMessageGeneration();
   }
 
-  ngOnInit() {
-    const channel = this.xmessService.channel('math/random/#');
-    
-    channel.subscribe((payload) => {
-      console.log('ng', payload);
+  private subscribeToRandomMessages() {
+    this.xmessService.channel(`math/random/#`).subscribe((data) => {
+      this.messages.angular.push(data);
     });
 
-    this.xmess.channel('math/random/#').subscribe((payload) => {
-      console.log('plain', payload);
+    this.xmess.channel(`math/random/#`).subscribe((data) => {
+      this.messages.javascript.push(data);
     });
+  }
 
+  private runRandomMessageGeneration() {
     window.setInterval(() => {
-      const random = Math.random();
-      this.xmess.channel(`math/random/${random}`).publish(random);
-    }, 1000);
+      this.publishToPlain();
+      window.setTimeout(() => this.publishToNg(), 2000);
+    }, 4000);
+  }
+
+  private publishToNg() {
+    const random = Math.random();
+    console.log('[angular] publish', random);
+    this.xmessService.channel(`math/random/${random}`).publish(random);
+    return random;
+  }
+
+  private publishToPlain() {
+    const random = Math.random();
+    console.log('[javascript] publish', random);
+    this.xmess.channel(`math/random/${random}`).publish(random);
+    return random;
   }
 }

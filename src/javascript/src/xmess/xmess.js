@@ -5,7 +5,7 @@ const defaultConfig = { id: 'xmess-id', plugins: [] };
 
 export const Xmess = function (config = defaultConfig) {
   const channelTree = new ChannelTree();
-  const channelFactory = (path, options) => new Channel(path, options);
+  const channelFactory = (path, initialMessage, options) => new Channel(path, initialMessage, options);
 
   return new SharedXmess({
     id: config.id,

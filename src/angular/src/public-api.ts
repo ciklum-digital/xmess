@@ -1,3 +1,3 @@
-export { XmessModule } from './xmess.module';
-export { XmessService } from './stubs/xmess-service.stub';
+export { XmessModule } from './xmess/xmess.module';
+export { XmessService } from './xmess/xmess-service.stub';
 export { RepeaterPlugin } from './shared/plugins/repeater';

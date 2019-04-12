@@ -1,1 +1,2 @@
-// directory for copy shared part for ng:build
+export { Xmess } from './xmess';
+export { ChannelTree } from './channel-tree';

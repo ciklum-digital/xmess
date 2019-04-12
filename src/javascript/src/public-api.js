@@ -1,2 +1,2 @@
-export { RepeaterPlugin } from '@shared/plugins/repeater/index';
-export { Xmess } from './xmess';
+export { RepeaterPlugin } from '@shared/plugins/repeater';
+export { Xmess } from './xmess/xmess';

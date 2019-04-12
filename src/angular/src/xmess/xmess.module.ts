@@ -1,6 +1,6 @@
 import { Injector, ModuleWithProviders, NgModule, InjectionToken, Inject } from '@angular/core';
-import { XmessService } from './stubs/xmess-service.stub';
-import { Xmess, ChannelTree } from './shared';
+import { XmessService } from './xmess-service.stub';
+import { Xmess, ChannelTree } from '../shared';
 import { Channel } from './channel';
 
 const defaultConfig = { id: 'ng-xmess', plugins: [] };
@@ -40,6 +40,6 @@ export function xmessServiceFactory({ id, plugins }) {
     id: id,
     plugins,
     channelTree,
-    channelFactory: (path, options) => new Channel(path, options),
+    channelFactory: (path, initialMessage, options) => new Channel(path, initialMessage, options),
   });
 }

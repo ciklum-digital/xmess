@@ -5,6 +5,8 @@ const babelConfig = require('./babel.config');
 const javascriptJson = require('../../javascript.json');
 const packageJson = require('../../src/javascript/package.json');
 
+const projectRoot = path.join(__dirname, '../..');
+
 const peerDependencies = Object.keys(packageJson.peerDependencies);
 const prodExternals = peerDependencies.reduce((externals, packageName) => {
   return Object.assign({}, externals, {
@@ -18,8 +20,8 @@ const providePlugin = new ProvidePlugin({
 
 const copyPlugin = new CopyPlugin([
   {
-    from: path.join(__dirname, '../..', javascriptJson.packageJsonPath),
-    to: path.join(__dirname, '../..', javascriptJson.outputDir),
+    from: path.join(projectRoot, javascriptJson.packageJsonPath),
+    to: path.join(projectRoot, javascriptJson.outputDir),
   }
 ]);
 
@@ -28,20 +30,20 @@ const webpackConfig = {
   mode: process.env.NODE_ENV || 'development',
   devtool: 'cheap-eval-source-map',
   entry: {
-    [javascriptJson.name]: path.join(__dirname, '../..', javascriptJson.entryPointPath)
+    [javascriptJson.name]: path.join(projectRoot, javascriptJson.entryPointPath)
   },
   externals: isProduction ? prodExternals : {},
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: ['src/javascript/src', 'node_modules'],
     alias: {
-      '@shared': '../../shared'
+      '@shared': path.join(projectRoot, './src/shared'),
     },
   },
   output: {
     library: '[name]',
     libraryTarget: 'umd',
-    path: path.join(__dirname, '../..', javascriptJson.outputDir),
+    path: path.join(projectRoot, javascriptJson.outputDir),
   },
   module: {
     rules: [

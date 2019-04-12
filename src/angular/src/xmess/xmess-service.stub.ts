@@ -1,4 +1,4 @@
-import { Channel } from '../channel';
+import { Channel } from './channel';
 
 class XmessService {
     channel(path: string): Channel {

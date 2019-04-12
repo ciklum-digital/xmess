@@ -34,6 +34,7 @@
     "test": " npm run js:test && npm run ng:test",
     "test:watch": "npm run js:test:watch && npm run ng:test:watch",
     "test:coverage": "npm run js:test:coverage && npm run ng:test:coverage",
+    "presandbox:start": "npm run build",
     "sandbox:start": "npm run ng serve sandbox"
   },
   "dependencies": {

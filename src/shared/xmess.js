@@ -19,12 +19,10 @@ class Xmess {
   }
 
   initialize() {
-    this.hooks('initialize')();
+    this.hook('initialize')();
   }
 
   channel(path) {
-    this.hooks('channel')(path);
-
     let channel;
     const pathSelector = createPathSelector(path);
 
@@ -39,41 +37,34 @@ class Xmess {
     return channel;
   }
 
-  publish(path, payload, isInternal = false) {
+  publish({ path, payload, initiatorId = this.id, isInternal = true }) {
     const pathSelector = createPathSelector(path);
 
     if (hasWildCard(pathSelector)) {
       throw new ReferenceError('Xmess does not support publish to wildcard!');
     }
 
-    this.hooks('publish')(path, payload, isInternal);
-
     const channels = this.channelTree.getChannelList(pathSelector);
-    channels.forEach(channel => channel.push({ path, payload }));
+    channels.forEach(channel => channel.next({ path, payload, initiatorId }));
+
+    this.hook('publish')(path, payload, isInternal);
   }
 
   createChannel(path) {
-    this.hooks('createChannel')(path);
-
-    const initialMessage = this.getInitialMessage(path);
-    const newChannel = this.channelFactory(path, {
-      initialMessage: initialMessage,
-      onPublish: this.onChannelPublish,
+    const initialMessage = this.createInitialMessage(path);
+    const newChannel = this.channelFactory(path, initialMessage, {
+      onPublish: this.publish.bind(this),
     });
 
     return newChannel;
   }
 
-  onChannelPublish = (path, payload) => {
-    this.publish(path, payload, true);
-  }
-
-  getInitialMessage(path) {
-    const message = this.hooks('getInitialMessage')(path);
+  createInitialMessage(path) {
+    const message = this.hook('createInitialMessage')(path);
     return message;
   }
 
-  hooks(hookName, initialSource) {
+  hook(hookName, initialSource) {
     return (...props) => this.pluginList.reduce((source, plugin) => {
       const hook = plugin.hooks[hookName];
       if (hook) {

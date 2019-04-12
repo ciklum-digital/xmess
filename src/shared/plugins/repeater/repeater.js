@@ -1,16 +1,16 @@
 class Repeater {
-  subjects = {};
+  messages = {};
   translators = [];
 
-  registerTranslator (translatorId, callback) {
-    const isIdUnique = this.translators.every(translator => translator.id !== translatorId);
+  registerTranslator (xmessId, callback) {
+    const isIdUnique = this.translators.every(translator => translator.id !== xmessId);
     if (isIdUnique) {
       this.translators.push({
-        id: translatorId,
+        id: xmessId,
         translate: callback,
       });
     } else {
-      const errorMessage = `[XMESS - Repeater] ${translatorId} is not unique. Translator did not register!`;
+      const errorMessage = `[XMESS-Repeater] XmessId(${xmessId}) is not unique. Translator did not register!`;
       throw new ReferenceError(errorMessage);
     }
   }
@@ -19,22 +19,20 @@ class Repeater {
     this.translators = this.translators.filter(translator => translator.id !== translatorId);
   }
 
-  publish (translatorId, channelPath, data) {
-    this.subjects[channelPath] = data;
-    this.repeat(translatorId, channelPath, data);
-  }
+  repeat (initiatorId, path, payload) {
+    this.messages[path] = { initiatorId, path, payload };
 
-  repeat (translatorId, channelPath, data) {
     this.translators.forEach((translator) => {
-      const isNotInitiator = translatorId !== translator.id;
+      const isNotInitiator = initiatorId !== translator.id;
       if (isNotInitiator) {
-        translator.translate(channelPath, data);
+        translator.translate(initiatorId, path, payload);
       }
     })
   }
 
-  getMessage (channelPath) {
-    return this.subjects[channelPath];
+  getMessage (path) {
+    const message = this.messages[path];
+    return message;
   }
 }
 
