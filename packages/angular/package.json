@@ -1,0 +1,30 @@
+{
+  "name": "@xmess/angular",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Denis Vada <dvad@ciklum.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/public-api.js",
+  "typings": "dist/public-api.d.ts",
+  "directories": {
+    "dist": "dist"
+  },
+  "files": ["dist"],
+  "publishConfig": {
+    "registry": "https://"
+  },
+  "scripts": {
+    "prebuild": "rm -r -f ./dist",
+    "build": "tsc",
+    "lint": "tslint"
+  },
+  "devDependencies": {
+    "@angular/core": "7.2.15",
+    "@xmess/core": "^0.0.0"
+  },
+  "peerDependency": {
+    "@angular/core": "^7.0.0",
+    "@xmess/core": "^0.0.0"
+  }
+}

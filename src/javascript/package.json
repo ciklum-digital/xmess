@@ -1,9 +1,0 @@
-{
-  "name": "@ciklum/boilerplate",
-  "version": "#",
-  "main": "boilerplate.js",
-  "peerDependencies": {
-    "@ciklum/logan": "^0.4.8",
-    "@ciklum/xmess-repeater": "^0.1.1"
-  }
-}
