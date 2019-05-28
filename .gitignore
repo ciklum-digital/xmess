@@ -2,12 +2,12 @@
 /.env
 
 # Compiled output
-/dist
+dist
 /tmp
 /out-tsc
 
 # Dependencies
-/node_modules
+node_modules
 
 # IDEs and editors
 /.idea
@@ -17,6 +17,7 @@
 *.launch
 .settings/
 *.sublime-workspace
+/packages/**/package-lock.json
 
 # IDE - VSCode
 .vscode/*
