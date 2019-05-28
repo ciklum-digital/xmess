@@ -13,6 +13,8 @@
     "tslint-config-airbnb-base": "0.3.0"
   },
   "scripts": {
+    "preinstall": "lerna link",
+    "postinstall": "lerna bootstrap",
     "lint": "tslint packages/**/*.ts",
     "lint:fix": "tslint packages/**/*.ts --fix",
     "test": "jest",
