@@ -1,6 +1,0 @@
-{
-  "name": "boilerplate",
-  "outputDir": "dist/boilerplate",
-  "entryPointPath": "src/javascript/src/public-api.js",
-  "packageJsonPath": "src/javascript/package.json"
-}
