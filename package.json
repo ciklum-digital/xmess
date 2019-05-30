@@ -10,13 +10,14 @@
     "jest": "24.8.0",
     "ts-jest": "24.0.2",
     "tslint": "5.16.0",
-    "tslint-config-airbnb-base": "0.3.0"
+    "tslint-config-airbnb-base": "0.3.0",
+    "tslint-sonarts": "1.9.0"
   },
   "scripts": {
     "preinstall": "lerna link",
     "postinstall": "lerna bootstrap",
-    "lint": "tslint packages/**/*.ts",
-    "lint:fix": "tslint packages/**/*.ts --fix",
+    "lint": "tslint packages/**/*.ts --project ./tsconfig.json",
+    "lint:fix": "tslint packages/**/*.ts --project ./tsconfig.json --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "build": "lerna run build",

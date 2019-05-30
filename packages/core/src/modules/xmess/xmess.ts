@@ -53,7 +53,9 @@ export class Xmess implements IXmess {
     }
 
     const channelList = this.channelTree.getChannelList(pathSelector);
-    channelList.forEach(channel => channel.next(message));
+    channelList.forEach((channel: IChannel) => {
+      channel.next(message);
+    });
 
     this.hooks.publish.call(isInternal, message);
   }

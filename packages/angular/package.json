@@ -16,8 +16,7 @@
   },
   "scripts": {
     "prebuild": "rm -r -f ./dist",
-    "build": "tsc",
-    "lint": "tslint"
+    "build": "tsc"
   },
   "devDependencies": {
     "@angular/core": "7.2.15",

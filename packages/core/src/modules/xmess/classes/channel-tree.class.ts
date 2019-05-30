@@ -41,6 +41,7 @@ export class ChannelTree implements IChannelTree {
 
   public getChannel(pathSelector: IPathSelector): IChannel | null {
     const channelNode = this.getChannelNode(pathSelector);
+
     return this.getChannelFromNode(channelNode);
   }
 

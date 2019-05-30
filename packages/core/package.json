@@ -16,7 +16,6 @@
   },
   "scripts": {
     "prebuild": "rm -r -f ./dist",
-    "build": "tsc",
-    "test": "jest --config=../../jest.config.js"
+    "build": "tsc"
   }
 }

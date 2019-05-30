@@ -1,8 +1,12 @@
 {
-  "extends": "tslint-config-airbnb-base",
+  "extends": [
+    "tslint-sonarts",
+    "tslint-config-airbnb-base"
+  ],
   "rules": {
     "ter-max-len": [true, 120],
-    "no-use-before-declare": false
+    "no-use-before-declare": false,
+    "newline-before-return": true
   },
   "linterOptions": {
     "exclude": [

@@ -28,21 +28,14 @@ export class GlobalContext implements IGlobalContext {
   }
 
   public getLastMessage (channelPath: string): IChannelMessage {
-    const lastMessage = this.lastMessages[channelPath];
-    return lastMessage;
+    return this.lastMessages[channelPath];
   }
 
   public removeInstance (xmessId: string): void {
-    this.xmessInstanceList = this.xmessInstanceList.filter((xmessInstance: IXmess) => {
-      const shouldRemove = xmessInstance.id === xmessId;
-      return !shouldRemove;
-    });
+    this.xmessInstanceList = this.xmessInstanceList.filter((xmessInstance: IXmess) => xmessInstance.id !== xmessId);
   }
 
   private isIdUnique (xmessId: string): boolean {
-    return this.xmessInstanceList.every((xmessInstance) => {
-      const isNotEqual = xmessInstance.id !== xmessId;
-      return isNotEqual;
-    });
+    return this.xmessInstanceList.every((xmessInstance: IXmess) => xmessInstance.id !== xmessId);
   }
 }
