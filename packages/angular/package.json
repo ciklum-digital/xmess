@@ -1,6 +1,6 @@
 {
   "name": "@xmess/angular",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "> TODO: description",
   "author": "Denis Vada <dvad@ciklum.com>",
   "homepage": "",
@@ -27,6 +27,6 @@
     "@angular/core": "^7.0.0"
   },
   "dependencies": {
-    "@xmess/core": "^0.0.3"
+    "@xmess/core": "^0.0.4"
   }
 }
