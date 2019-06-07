@@ -6,14 +6,20 @@
     "typescript": "3.4.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
     "@types/jest": "24.0.13",
+    "commitizen": "^3.1.1",
+    "husky": "^2.4.0",
     "jest": "24.8.0",
+    "npx": "^10.2.0",
     "ts-jest": "24.0.2",
     "tslint": "5.16.0",
     "tslint-config-airbnb-base": "0.3.0",
     "tslint-sonarts": "1.9.0"
   },
   "scripts": {
+    "commit": "npx git-cz",
     "preinstall": "lerna link",
     "postinstall": "lerna bootstrap",
     "lint": "tslint packages/**/*.ts --project ./tsconfig.json",
@@ -23,5 +29,15 @@
     "build": "lerna run build",
     "link": "lerna link",
     "publish": "lerna publish"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }

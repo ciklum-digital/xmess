@@ -10,7 +10,9 @@
   "directories": {
     "dist": "dist"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "registry": "https://"
   },
@@ -18,10 +20,7 @@
     "prebuild": "rm -r -f ./dist",
     "build": "tsc"
   },
-  "devDependencies": {
-    "@xmess/core": "^0.0.0"
-  },
-  "peerDependency": {
+  "dependencies": {
     "@xmess/core": "^0.0.0"
   }
 }

@@ -10,7 +10,9 @@
   "directories": {
     "dist": "dist"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "registry": "https://"
   },
@@ -19,11 +21,12 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@angular/core": "7.2.15",
-    "@xmess/core": "^0.0.0"
+    "@angular/core": "7.2.15"
   },
   "peerDependency": {
-    "@angular/core": "^7.0.0",
+    "@angular/core": "^7.0.0"
+  },
+  "dependencies": {
     "@xmess/core": "^0.0.0"
   }
 }
