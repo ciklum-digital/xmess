@@ -5,7 +5,9 @@
   ],
   "command": {
     "publish": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "allowBranch": "lerna",
+      "from-git": true
     }
   }
 }

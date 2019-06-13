@@ -1,0 +1,19 @@
+language: node_js
+node_js: "10"
+
+
+
+script:
+  - npm run lint
+  - npm test
+
+before_deploy:
+  - npm run build
+
+deploy:
+  provider: script
+  script: "npm run publish"
+  skip_cleanup: true
+  on:
+    node: "10"
+    branch: lerna

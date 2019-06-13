@@ -13,9 +13,6 @@
   "files": [
     "dist"
   ],
-  "publishConfig": {
-    "registry": "https://"
-  },
   "scripts": {
     "prebuild": "rm -r -f ./dist",
     "build": "tsc"
