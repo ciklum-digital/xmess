@@ -24,14 +24,13 @@
   },
   "scripts": {
     "commit": "npx git-cz",
-    "preinstall": "lerna link",
-    "postinstall": "lerna bootstrap",
+    "link": "lerna link",
+    "bootstrap": "lerna bootstrap",
     "lint": "tslint packages/**/*.ts --project ./tsconfig.json",
     "lint:fix": "tslint packages/**/*.ts --project ./tsconfig.json --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "build": "lerna run build",
-    "link": "lerna link",
     "publish": "lerna publish"
   },
   "husky": {
