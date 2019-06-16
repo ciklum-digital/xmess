@@ -1,9 +1,9 @@
 {
-  "name": "xmess",
+  "name": "@xmess/xmess",
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ciklum-digital/xmess.git"
+    "url": "git+https://github.com/ciklum-digital/xmess.git"
   },
   "dependencies": {
     "lerna": "3.14.1",
@@ -47,5 +47,13 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/",
     "tag": "latest"
-  }
+  },
+  "description": "## Description",
+  "bugs": {
+    "url": "https://github.com/ciklum-digital/xmess/issues"
+  },
+  "homepage": "https://github.com/ciklum-digital/xmess#readme",
+  "main": "lerna.json",
+  "author": "",
+  "license": "MIT"
 }

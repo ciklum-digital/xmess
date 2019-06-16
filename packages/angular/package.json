@@ -30,5 +30,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/",
     "tag": "latest"
-  }
+  },
+  "gitHead": "8bcf41640d5ce108c8a5ed9b1463f545f8295149"
 }
