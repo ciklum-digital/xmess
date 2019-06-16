@@ -43,11 +43,6 @@
       "path": "node_modules/cz-conventional-changelog"
     }
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/",
-    "tag": "latest"
-  },
   "description": "## Description",
   "bugs": {
     "url": "https://github.com/ciklum-digital/xmess/issues"
