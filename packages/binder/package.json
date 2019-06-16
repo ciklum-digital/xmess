@@ -1,6 +1,6 @@
 {
   "name": "@xmess/binder",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "> TODO: description",
   "author": "Denis Vada <dvad@ciklum.com>",
   "homepage": "",
@@ -18,7 +18,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@xmess/core": "^0.1.2"
+    "@xmess/core": "^0.1.3"
   },
   "publishConfig": {
     "access": "public",
