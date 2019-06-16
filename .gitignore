@@ -5,9 +5,10 @@
 dist
 /tmp
 /out-tsc
-
-# Dependencies
-node_modules
+/.changelog
+/public
+/coverage
+/node_modules
 
 # IDEs and editors
 /.idea
@@ -28,8 +29,6 @@ node_modules
 # Misc
 /.sass-cache
 /connect.lock
-/public
-/coverage
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
