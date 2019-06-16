@@ -16,5 +16,10 @@
   "scripts": {
     "prebuild": "rm -r -f ./dist",
     "build": "tsc"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
   }
 }
