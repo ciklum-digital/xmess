@@ -9,6 +9,7 @@ dist
 /public
 /coverage
 /node_modules
+/packages/*/node_modules
 
 # IDEs and editors
 /.idea
