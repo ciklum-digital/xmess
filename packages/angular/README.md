@@ -10,6 +10,7 @@
 
 ### Description
 ---
+[should be added here]
 
 ### Installation
 ---
@@ -21,7 +22,7 @@ $ npm i @xmess/core @xmess/angular --save
 
 2. Import `Xmess`, and provide base configuration
 ```typescript
-import { XmessModule } from '@xmess/angular';
+import { XmessModule } from ng;
 
 @NgModule({
   imports: [

@@ -1,21 +1,26 @@
 {
   "name": "@xmess/core",
-  "version": "0.0.0",
+  "version": "0.1.4",
   "description": "> TODO: description",
   "author": "Denis Vada <dvad@ciklum.com>",
   "homepage": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "dist/public-api.js",
   "typings": "dist/public-api.d.ts",
   "directories": {
     "dist": "dist"
   },
-  "files": ["dist"],
-  "publishConfig": {
-    "registry": "https://"
-  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prebuild": "rm -r -f ./dist",
     "build": "tsc"
-  }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  },
+  "gitHead": "73c061305a54b48699465917674e53983437903d"
 }

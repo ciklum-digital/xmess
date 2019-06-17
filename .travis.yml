@@ -1,0 +1,26 @@
+language: node_js
+node_js: "10"
+
+before_install:
+  - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+
+install:
+  - npm ci --quite
+  - npm run bootstrap
+
+script:
+  - npm run build
+  - npm run lint
+  - npm test
+
+#before_deploy:
+#  - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/ciklum-digital/xmess.git" > /dev/null 2>&1
+#  - git checkout lerna
+
+deploy:
+  provider: script
+  script: npm run publish
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: master

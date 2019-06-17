@@ -1,27 +1,57 @@
 {
   "name": "xmess",
-  "version": "2.0.0",
+  "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciklum-digital/xmess.git"
+  },
   "dependencies": {
-    "lerna": "3.14.1",
     "typescript": "3.4.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
     "@types/jest": "24.0.13",
+    "commitizen": "^3.1.1",
+    "husky": "^2.4.0",
     "jest": "24.8.0",
+    "lerna": "^3.14.1",
+    "lerna-changelog": "^0.8.2",
+    "npx": "^10.2.0",
     "ts-jest": "24.0.2",
     "tslint": "5.16.0",
     "tslint-config-airbnb-base": "0.3.0",
     "tslint-sonarts": "1.9.0"
   },
   "scripts": {
-    "preinstall": "lerna link",
-    "postinstall": "lerna bootstrap",
+    "commit": "npx git-cz",
+    "link": "lerna link",
+    "bootstrap": "lerna bootstrap --hoist",
     "lint": "tslint packages/**/*.ts --project ./tsconfig.json",
     "lint:fix": "tslint packages/**/*.ts --project ./tsconfig.json --fix",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "build": "lerna run build",
-    "link": "lerna link",
+    "publish:canary": "lerna publish --canary",
     "publish": "lerna publish"
-  }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "description": "## Description",
+  "bugs": {
+    "url": "https://github.com/ciklum-digital/xmess/issues"
+  },
+  "homepage": "https://github.com/ciklum-digital/xmess#readme",
+  "main": "lerna.json",
+  "author": "",
+  "license": "MIT"
 }
