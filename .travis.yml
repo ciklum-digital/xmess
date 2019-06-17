@@ -1,24 +1,28 @@
 language: node_js
 node_js: "10"
 
+before_install:
+  - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+
 install:
-  - npm ci
+  - npm ci --quite
   - npm run bootstrap
 
 script:
+  - npm run build
   - npm run lint
   - npm test
 
 before_deploy:
-  - npm run build
 #  - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/ciklum-digital/xmess.git" > /dev/null 2>&1
 #  - git checkout lerna
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 
 deploy:
   provider: script
   script: "npm run publish"
   skip_cleanup: true
   on:
-    node: "10"
-    branch: lerna
+    tags: true
+
+
+# https://medium.com/disdj/monorepo-scripts-strategies-naming-conventions-691c64b51acb

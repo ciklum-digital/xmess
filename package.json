@@ -27,7 +27,7 @@
   "scripts": {
     "commit": "npx git-cz",
     "link": "lerna link",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --hoist",
     "lint": "tslint packages/**/*.ts --project ./tsconfig.json",
     "lint:fix": "tslint packages/**/*.ts --project ./tsconfig.json --fix",
     "test": "jest",
