@@ -18,14 +18,19 @@ before_deploy:
 #  - git checkout lerna
 
 deploy:
-  - provider: script
-    script: npm run publish:canary
-    skip_cleanup: true
-    on:
-      branch: lerna
-      tags: false
+#  - provider: script
+#    script: npm run publish:canary
+#    skip_cleanup: true
+#    on:
+#      branch: lerna
+#      tags: false
   - provider: script
     script: npm run publish
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: releases
+    api_key: $GITHUB_TOKEN
     skip_cleanup: true
     on:
       tags: true
