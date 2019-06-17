@@ -13,7 +13,7 @@
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@types/jest": "24.0.13",
-    "commitizen": "^3.1.1",
+    "commitizen": "3.1.1",
     "husky": "^2.4.0",
     "jest": "24.8.0",
     "lerna": "^3.14.1",

@@ -13,9 +13,9 @@ script:
   - npm run lint
   - npm test
 
-#before_deploy:
+before_deploy:
 #  - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/ciklum-digital/xmess.git" > /dev/null 2>&1
-#  - git checkout lerna
+  - git checkout master
 
 deploy:
   provider: script
