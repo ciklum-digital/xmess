@@ -13,27 +13,16 @@ script:
   - npm run lint
   - npm test
 
-before_deploy:
+#before_deploy:
 #  - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/ciklum-digital/xmess.git" > /dev/null 2>&1
 #  - git checkout lerna
 
 deploy:
-#  - provider: script
-#    script: npm run publish:canary
-#    skip_cleanup: true
-#    on:
-#      branch: lerna
-#      tags: false
-  - provider: script
-    script: npm run publish
-    skip_cleanup: true
-    on:
-      tags: true
-  - provider: releases
-    api_key: $GITHUB_TOKEN
-    skip_cleanup: true
-    on:
-      tags: true
-
+  provider: script
+  script: npm run publish
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: lerna
 
 # https://medium.com/disdj/monorepo-scripts-strategies-naming-conventions-691c64b51acb
