@@ -2,6 +2,7 @@ language: node_js
 node_js: "10"
 
 before_install:
+  - git remote add origin "https://${GITHUB_TOKEN}@github.com/ciklum-digital/xmess.git"
   - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
 
 install:
@@ -14,7 +15,6 @@ script:
   - npm test
 
 before_deploy:
-#  - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/ciklum-digital/xmess.git" > /dev/null 2>&1
   - git checkout master
 
 deploy:
