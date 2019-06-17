@@ -20,7 +20,7 @@
   "command": {
     "publish": {
       "conventionalCommits": true,
-      "allowBranch": "lerna",
+      "allowBranch": "master",
       "from-git": true,
       "yes": true
     }
