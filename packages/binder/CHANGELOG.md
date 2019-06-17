@@ -5,12 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [0.1.5](https://github.com/ciklum-digital/xmess/compare/v0.1.4...v0.1.5) (2019-06-17)
 
-
-### Bug Fixes
-
-* fix travis config ([5dcc62f](https://github.com/ciklum-digital/xmess/commit/5dcc62f))
-
-
-### Features
-
-* finalize lerna ([fbd291f](https://github.com/ciklum-digital/xmess/commit/fbd291f))
+**Note:** Version bump only for package @xmess/binder
