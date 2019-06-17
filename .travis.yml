@@ -18,11 +18,17 @@ before_deploy:
 #  - git checkout lerna
 
 deploy:
-  provider: script
-  script: "npm run publish"
-  skip_cleanup: true
-  on:
-    tags: true
+  - provider: script
+    script: npm run publish:canary
+    skip_cleanup: true
+    on:
+      branch: lerna
+      tags: false
+  - provider: script
+    script: npm run publish
+    skip_cleanup: true
+    on:
+      tags: true
 
 
 # https://medium.com/disdj/monorepo-scripts-strategies-naming-conventions-691c64b51acb

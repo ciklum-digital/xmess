@@ -33,6 +33,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "build": "lerna run build",
+    "publish:canary": "lerna publish --canary",
     "publish": "lerna publish"
   },
   "husky": {
