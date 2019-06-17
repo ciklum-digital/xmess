@@ -22,5 +22,5 @@ deploy:
   script: npm run publish
   skip_cleanup: true
   on:
-    tags: true
+#    tags: true
     branch: master
