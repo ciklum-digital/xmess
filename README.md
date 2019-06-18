@@ -4,7 +4,7 @@
   <a href="https://www.npmjs.com/package/@xmess/core">
     <img src="https://img.shields.io/npm/v/@xmess/core.svg?style=flat" alt="npm version">
   </a>
-  <a href="https://travis-ci.org/ciklum-digital/xmess">
+  <a href="https://travis-ci.com/ciklum-digital/xmess">
     <img alt="Travis" src="https://img.shields.io/travis/ciklum-digital/xmess/master.svg">
   </a>
   <a href="https://codecov.io/gh/ciklum-digital/xmess">
