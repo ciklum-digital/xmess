@@ -26,15 +26,15 @@
   },
   "scripts": {
     "commit": "npx git-cz",
-    "link": "lerna link",
-    "bootstrap": "lerna bootstrap --hoist",
-    "lint": "tslint packages/**/*.ts --project ./tsconfig.json",
-    "lint:fix": "tslint packages/**/*.ts --project ./tsconfig.json --fix",
-    "test": "jest",
+    "link": "npx lerna link",
+    "bootstrap": "npx lerna bootstrap --hoist",
+    "lint": "npx tslint packages/**/*.ts --project ./tsconfig.json",
+    "lint:fix": "npx tslint packages/**/*.ts --project ./tsconfig.json --fix",
+    "test": "npx jest",
+    "test:ci": "npm test | npx coveralls",
     "test:coverage": "jest --coverage",
-    "build": "lerna run build",
-    "publish:canary": "lerna publish --canary",
-    "publish": "lerna publish"
+    "build": "npx lerna run build",
+    "publish": "npx lerna publish"
   },
   "husky": {
     "hooks": {

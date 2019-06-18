@@ -12,7 +12,7 @@ install:
 script:
   - npm run build
   - npm run lint
-  - npm test
+  - npm run test:ci
 
 before_deploy:
   - git checkout ${TRAVIS_BRANCH}
