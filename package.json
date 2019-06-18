@@ -52,6 +52,6 @@
   },
   "homepage": "https://github.com/ciklum-digital/xmess#readme",
   "main": "lerna.json",
-  "author": "",
+  "author": "Denis Vada <dvad@ciklum.com>",
   "license": "MIT"
 }

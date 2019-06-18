@@ -2,7 +2,7 @@ language: node_js
 node_js: "10"
 
 before_install:
-  - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/ciklum-digital/xmess.git"
+  - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
   - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
 
 install:
@@ -15,7 +15,7 @@ script:
   - npm test
 
 before_deploy:
-  - git checkout master
+  - git checkout ${TRAVIS_BRANCH}
 
 deploy:
   provider: script
