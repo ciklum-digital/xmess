@@ -1,16 +1,15 @@
 import { IChannel, IChannelMessage, IChannelSubscriber } from '../interfaces/channel.interface';
 
-
 export class Channel implements IChannel {
   private lastMessage: IChannelMessage;
-  private subscribers: Array<IChannelSubscriber> = [];
+  private subscribers: IChannelSubscriber[] = [];
 
   constructor (
     public readonly path: string,
     public readonly publish: (payload: any) => void,
   ) {}
 
-  public setInitialMessage(initialMessage: IChannelMessage) {
+  public setInitialMessage (initialMessage: IChannelMessage) {
     if (!this.lastMessage) {
       this.lastMessage = initialMessage;
     } else {

@@ -1,19 +1,19 @@
 import { IXmess, IChannelMessage } from '@xmess/core/dist/types';
-import { IGlobalContext } from '../interfaces/global-context.interface';
 
+import { IGlobalContext } from '../interfaces/global-context.interface';
 
 export class GlobalContext implements IGlobalContext {
   private lastMessages: { [key: string]: IChannelMessage } = {};
-  private xmessInstanceList: Array<IXmess> = [];
+  private xmessInstanceList: IXmess[] = [];
 
-  public registerInstance (newXmessInstance: IXmess): void {
-    const isIdUnique = this.isIdUnique(newXmessInstance.id);
+  public registerInstance (xmessInstance: IXmess): void {
+    const isIdUnique = this.isIdUnique(xmessInstance.id);
     if (!isIdUnique) {
-      const errorMessage = `[@xmess/binder] Xmess(${newXmessInstance.id}) is not unique!`;
+      const errorMessage = `[@xmess/binder] Xmess(${xmessInstance.id}) is not unique!`;
       throw new ReferenceError(errorMessage);
     }
 
-    this.xmessInstanceList.push(newXmessInstance);
+    this.xmessInstanceList.push(xmessInstance);
   }
 
   public update (message: IChannelMessage): void {

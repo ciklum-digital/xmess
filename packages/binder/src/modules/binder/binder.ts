@@ -1,11 +1,11 @@
 import { IXmess, IChannel } from '@xmess/core/dist/types';
+
 import { GlobalContext } from './classes/global-context.class';
 import { GlobalUtil } from './utils/global.util';
 import { IGlobalContext } from './interfaces/global-context.interface';
 
-
 export class BinderPlugin {
-  private get globalContext(): IGlobalContext {
+  private get globalContext (): IGlobalContext {
     let globalContext = GlobalUtil.get('globalContext');
     if (!globalContext) {
       globalContext = new GlobalContext();
@@ -15,7 +15,7 @@ export class BinderPlugin {
     return globalContext;
   }
 
-  public initialize(xmessInstance: IXmess): void {
+  public initialize (xmessInstance: IXmess): void {
     xmessInstance.hooks.initialize.subscribe(() => {
       this.globalContext.registerInstance(xmessInstance);
     });
