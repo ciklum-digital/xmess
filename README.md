@@ -7,7 +7,7 @@
   <a href="https://travis-ci.com/ciklum-digital/xmess">
     <img alt="Travis" src="https://img.shields.io/travis/ciklum-digital/xmess/master.svg">
   </a>
-  <a href="https://codecov.io/gh/ciklum-digital/xmess">
-    <img alt="Codecov" src="https://img.shields.io/codecov/c/github/ciklum-digital/xmess/master.svg">
+  <a href='https://coveralls.io/github/ciklum-digital/xmess?branch=master'>
+    <img src='https://coveralls.io/repos/github/ciklum-digital/xmess/badge.svg?branch=master' alt='Coverage Status' />
   </a>
 </p>
