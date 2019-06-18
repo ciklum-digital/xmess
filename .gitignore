@@ -10,7 +10,6 @@ dist
 /coverage
 /node_modules
 /packages/*/node_modules
-/packages/*/CHANGELOG.md
 
 # IDEs and editors
 /.idea
