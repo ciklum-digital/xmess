@@ -1,5 +1,10 @@
-<h1 align="center" style="border-bottom: none;">📦 XMESS</h1>
+<p align="center">
+    <a href="https://ciklum-digital.github.io/xmess/">
+        <img width="440" src="docs/assets/images/xmess.png" alt="xmess icon">
+    </a>    
+</p>
 <h3 align="center">Multiple applications manager</h3>
+
 <p align="center">
   <a href="https://www.npmjs.com/package/@xmess/core">
     <img src="https://img.shields.io/npm/v/@xmess/core.svg?style=flat" alt="npm version">
