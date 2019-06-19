@@ -1,4 +1,8 @@
-# XMESS
+<p align="center">
+    <a href="https://ciklum-digital.github.io/xmess/">
+        <img width="440" src="assets/images/xmess.png" alt="xmess icon">
+    </a>    
+</p>
 
 > Multiple applications manager
 
