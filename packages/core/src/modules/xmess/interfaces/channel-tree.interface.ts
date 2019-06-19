@@ -9,7 +9,7 @@ export interface IChannelNode extends IBaseObject {
 }
 
 export interface IChannelTree {
-  getChannelList (parentPathSelector: IPathSelector): IChannelList;
-  getChannel (pathSelector: IPathSelector): IChannel | null;
-  addChannel (pathSelector: IPathSelector, channel: IChannel): void;
+  getChannelList(parentPathSelector: IPathSelector): IChannelList;
+  getChannel(pathSelector: IPathSelector): IChannel | null;
+  addChannel(pathSelector: IPathSelector, channel: IChannel): void;
 }

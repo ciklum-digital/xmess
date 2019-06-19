@@ -1,11 +1,11 @@
 import { IPathSelector } from '../interfaces/path.interface';
 
 export namespace PathUtil {
-  export function createSelector (path: string): IPathSelector {
+  export function createSelector(path: string): IPathSelector {
     return path.split('/');
   }
 
-  export function hasWildCard (pathSelector: IPathSelector): boolean {
+  export function hasWildCard(pathSelector: IPathSelector): boolean {
     return pathSelector.some((path) => {
       const isMultiLevelPath = path === '#';
       const isSignleLevelPath = path === '+';
@@ -14,7 +14,7 @@ export namespace PathUtil {
     });
   }
 
-  export function getChildPathSelector (pathSelector: IPathSelector) {
+  export function getChildPathSelector(pathSelector: IPathSelector) {
     return pathSelector.slice(1);
   }
 }

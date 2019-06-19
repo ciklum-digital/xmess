@@ -5,8 +5,8 @@ import { IHook } from '../../../shared/interfaces/hook.interface';
 export interface IXmess extends IBaseObject {
   readonly id: string;
   readonly hooks: IXmessHooks;
-  channel (path: string): IChannel;
-  publish (message: IChannelMessage): void;
+  channel(path: string): IChannel;
+  publish(message: IChannelMessage): void;
 }
 
 export interface IXmessHooks {
@@ -21,5 +21,5 @@ export interface IXmessOptions {
 }
 
 export interface IXmessPlugin {
-  initialize (xmessInstance: IXmess): void;
+  initialize(xmessInstance: IXmess): void;
 }

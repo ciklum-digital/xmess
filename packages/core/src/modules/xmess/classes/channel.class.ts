@@ -4,12 +4,12 @@ export class Channel implements IChannel {
   private lastMessage: IChannelMessage;
   private subscribers: IChannelSubscriber[] = [];
 
-  constructor (
+  constructor(
     public readonly path: string,
     public readonly publish: (payload: any) => void,
   ) {}
 
-  public setInitialMessage (initialMessage: IChannelMessage) {
+  public setInitialMessage(initialMessage: IChannelMessage) {
     if (!this.lastMessage) {
       this.lastMessage = initialMessage;
     } else {
@@ -17,7 +17,7 @@ export class Channel implements IChannel {
     }
   }
 
-  public subscribe (newSubscriber: IChannelSubscriber): void {
+  public subscribe(newSubscriber: IChannelSubscriber): void {
     if (this.lastMessage && this.lastMessage.payload) {
       newSubscriber(this.lastMessage);
     }
@@ -25,7 +25,7 @@ export class Channel implements IChannel {
     this.subscribers.push(newSubscriber);
   }
 
-  public next (message: IChannelMessage): void {
+  public next(message: IChannelMessage): void {
     this.lastMessage = message;
     this.subscribers.forEach(subscriber => subscriber(message));
   }

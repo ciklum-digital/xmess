@@ -10,7 +10,7 @@
     "no-use-before-declare": false,
     "origin-ordered-imports": [true, "one-blank-line"],
     "newline-before-return": true,
-    "space-before-function-paren": [true, "always"],
+    "space-before-function-paren": [true, "never"],
     "lines-between-class-members": ["error", "always", {
       "exceptAfterSingleLine": true
     }],
