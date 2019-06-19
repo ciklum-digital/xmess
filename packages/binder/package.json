@@ -17,8 +17,11 @@
     "prebuild": "rm -r -f ./dist",
     "build": "tsc"
   },
-  "dependencies": {
-    "@xmess/core": "^0.1.5"
+  "devDependencies": {
+    "@xmess/core": "0.1.5"
+  },
+  "peerDependencies": {
+    "@xmess/core": "~0.0.0"
   },
   "publishConfig": {
     "access": "public",
