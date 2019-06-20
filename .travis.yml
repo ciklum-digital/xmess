@@ -16,10 +16,10 @@ install:
   - npm run bootstrap
 
 script:
-  - npm run build
   - npm run lint
-  - sonar-scanner
   - npm run test:ci
+  - npm run sonar
+  - npm run build
 
 before_deploy:
   - git checkout ${TRAVIS_BRANCH}
