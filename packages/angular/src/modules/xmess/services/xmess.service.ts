@@ -4,9 +4,8 @@ import { IChannel } from '@xmess/core/dist/types';
 
 import { Channel } from '../classes/channel.class';
 
-
 @Injectable()
-class XmessService extends Xmess {
+export class XmessService extends Xmess {
   protected static channelFactory(path: string, onPublish: (payload: any) => void): IChannel {
     return new Channel(path, onPublish);
   }
@@ -15,5 +14,3 @@ class XmessService extends Xmess {
     super(config.id, config.options);
   }
 }
-
-export { XmessService };

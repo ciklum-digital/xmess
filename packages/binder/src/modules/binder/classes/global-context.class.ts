@@ -1,22 +1,22 @@
 import { IXmess, IChannelMessage } from '@xmess/core/dist/types';
-import { IGlobalContext } from '../interfaces/global-context.interface';
 
+import { IGlobalContext } from '../interfaces/global-context.interface';
 
 export class GlobalContext implements IGlobalContext {
   private lastMessages: { [key: string]: IChannelMessage } = {};
-  private xmessInstanceList: Array<IXmess> = [];
+  private xmessInstanceList: IXmess[] = [];
 
-  public registerInstance (newXmessInstance: IXmess): void {
-    const isIdUnique = this.isIdUnique(newXmessInstance.id);
+  public registerInstance(xmessInstance: IXmess): void {
+    const isIdUnique = this.isIdUnique(xmessInstance.id);
     if (!isIdUnique) {
-      const errorMessage = `[@xmess/binder] Xmess(${newXmessInstance.id}) is not unique!`;
+      const errorMessage = `[@xmess/binder] Xmess(${xmessInstance.id}) is not unique!`;
       throw new ReferenceError(errorMessage);
     }
 
-    this.xmessInstanceList.push(newXmessInstance);
+    this.xmessInstanceList.push(xmessInstance);
   }
 
-  public update (message: IChannelMessage): void {
+  public update(message: IChannelMessage): void {
     this.lastMessages[message.path] = message;
 
     this.xmessInstanceList.forEach((xmessInstance: IXmess) => {
@@ -27,15 +27,15 @@ export class GlobalContext implements IGlobalContext {
     });
   }
 
-  public getLastMessage (channelPath: string): IChannelMessage {
+  public getLastMessage(channelPath: string): IChannelMessage {
     return this.lastMessages[channelPath];
   }
 
-  public removeInstance (xmessId: string): void {
+  public removeInstance(xmessId: string): void {
     this.xmessInstanceList = this.xmessInstanceList.filter((xmessInstance: IXmess) => xmessInstance.id !== xmessId);
   }
 
-  private isIdUnique (xmessId: string): boolean {
+  private isIdUnique(xmessId: string): boolean {
     return this.xmessInstanceList.every((xmessInstance: IXmess) => xmessInstance.id !== xmessId);
   }
 }

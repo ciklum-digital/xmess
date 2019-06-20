@@ -1,7 +1,6 @@
+import { IChannel, IChannelMessage } from './channel.interface';
 import { IBaseObject } from '../../../shared/models';
 import { IHook } from '../../../shared/interfaces/hook.interface';
-import { IChannel, IChannelMessage } from './channel.interface';
-
 
 export interface IXmess extends IBaseObject {
   readonly id: string;
@@ -18,5 +17,9 @@ export interface IXmessHooks {
 }
 
 export interface IXmessOptions {
-  plugins: Array<any>;
+  plugins: IXmessPlugin[];
+}
+
+export interface IXmessPlugin {
+  initialize(xmessInstance: IXmess): void;
 }
