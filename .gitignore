@@ -7,7 +7,7 @@ dist
 /out-tsc
 /.changelog
 /public
-/coverage
+coverage/
 /node_modules
 /packages/*/node_modules
 

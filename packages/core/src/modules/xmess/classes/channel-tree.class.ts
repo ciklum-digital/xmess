@@ -3,7 +3,6 @@ import { IChannelTree, IChannelNode, IChannelList } from '../interfaces/channel-
 import { IPathSelector } from '../interfaces/path.interface';
 import { PathUtil } from '../utils/path.util';
 
-
 export class ChannelTree implements IChannelTree {
   private rootChannelNode: IChannelNode = {};
 
