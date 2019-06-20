@@ -1,6 +1,6 @@
 {
   "name": "@xmess/binder",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "> TODO: description",
   "author": "Denis Vada <dvad@ciklum.com>",
   "homepage": "",
@@ -18,7 +18,7 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@xmess/core": "0.1.5"
+    "@xmess/core": "^0.1.6"
   },
   "peerDependencies": {
     "@xmess/core": "~0.0.0"
