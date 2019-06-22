@@ -9,7 +9,6 @@ before_install:
 
 install:
   - yarn
-#  - npm run bootstrap
 
 script:
   - npm run build
