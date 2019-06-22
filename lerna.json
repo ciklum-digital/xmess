@@ -7,14 +7,15 @@
     "repo": "ciklum-digital/xmess",
     "cacheDir": ".changelog",
     "labels": {
-      "PR: Spec Compliance :eyeglasses:": ":eyeglasses: Spec Compliance",
-      "PR: Breaking Change :boom:": ":boom: Breaking Change",
-      "PR: New Feature :rocket:": ":rocket: New Feature",
+      "PR: Test :ring:": ":ring: Test",
+      "PR: New Feature :guitar:": ":guitar: New Feature",
       "PR: Bug Fix :bug:": ":bug: Bug Fix",
-      "PR: Polish :nail_care:": ":nail_care: Polish",
-      "PR: Docs :memo:": ":memo: Documentation",
-      "PR: Internal :house:": ":house: Internal",
-      "PR: Performance :running_woman:": ":running_woman: Performance"
+      "PR: Chore :robot-face:": ":robot-face: Chore",
+      "PR: Docs :pencil2:": ":pencil2: Docs",
+      "PR: Refactor :bulb:": ":bulb: Refactor",
+      "PR: Style :lipstick:": ":lipstick: Style",
+      "PR: CI :ferris_wheel:": ":ferris_wheel: CI",
+      "PR: Performance :zap:": ":zap: Performance"
     }
   },
   "command": {
