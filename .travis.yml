@@ -1,5 +1,7 @@
 language: node_js
 node_js: "10"
+cache:
+  yarn: true
 
 addons:
  sonarcloud:
@@ -12,8 +14,7 @@ before_install:
   - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
 
 install:
-  - npm ci --quite
-  - npm run bootstrap
+  - yarn
 
 script:
   - npm run lint
