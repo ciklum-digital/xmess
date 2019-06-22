@@ -21,6 +21,7 @@
     "lerna": "3.14.1",
     "lerna-changelog": "^0.8.2",
     "npx": "10.2.0",
+    "sonar-scanner": "3.1.0",
     "ts-jest": "24.0.2",
     "tslint": "5.16.0",
     "tslint-config-airbnb": "5.11.1",
@@ -35,6 +36,7 @@
     "lint:fix": "npx tslint packages/**/*.ts --project ./tsconfig.json --fix",
     "test": "npx jest",
     "test:ci": "yarn test | npx coveralls",
+    "sonar": "npx sonar-scanner",
     "test:coverage": "jest --coverage",
     "build": "npx lerna run build",
     "publish": "npx lerna publish"

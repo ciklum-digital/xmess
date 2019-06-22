@@ -3,6 +3,12 @@ node_js: "10"
 cache:
   yarn: true
 
+addons:
+ sonarcloud:
+   organization: ciklum-digital
+   token:
+     secure: $SONAR_TOKEN
+
 before_install:
   - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
   - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
@@ -11,9 +17,10 @@ install:
   - yarn
 
 script:
-  - npm run build
   - npm run lint
   - npm run test:ci
+  - npm run sonar
+  - npm run build
 
 before_deploy:
   - git checkout ${TRAVIS_BRANCH}
