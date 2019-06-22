@@ -25,5 +25,9 @@
       "from-git": true,
       "yes": true
     }
-  }
+  },
+  "npmClient": "yarn",
+  "npmClientArgs": [
+    "--no-lockfile"
+  ]
 }

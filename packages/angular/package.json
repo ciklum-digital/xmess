@@ -24,7 +24,7 @@
   },
   "peerDependency": {
     "rxjs": "~6.3.0",
-    "@xmess/core": "~0.0.0",
+    "@xmess/core": "^0.1.6",
     "@angular/core": "~7.0.0"
   },
   "publishConfig": {
