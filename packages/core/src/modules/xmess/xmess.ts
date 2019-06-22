@@ -6,7 +6,6 @@ import { Hook } from '../../shared/classes/hook.class';
 import { IXmess, IXmessOptions } from './interfaces/xmess.interface';
 import { IChannel, IChannelMessage } from './interfaces/channel.interface';
 
-
 export class Xmess implements IXmess {
   protected static channelFactory(path: string, onChannelPublish: (payload: any) => void): IChannel {
     return new Channel(path, onChannelPublish);

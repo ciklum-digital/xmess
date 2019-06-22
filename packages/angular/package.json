@@ -1,6 +1,6 @@
 {
   "name": "@xmess/angular",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "> TODO: description",
   "author": "Denis Vada <dvad@ciklum.com>",
   "homepage": "",
@@ -18,13 +18,14 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@angular/core": "7.2.15"
+    "@angular/core": "7.2.15",
+    "@xmess/core": "^0.1.6",
+    "rxjs": "6.5.2"
   },
   "peerDependency": {
-    "@angular/core": "^7.0.0"
-  },
-  "dependencies": {
-    "@xmess/core": "^0.1.5"
+    "rxjs": "~6.3.0",
+    "@xmess/core": "~0.0.0",
+    "@angular/core": "~7.0.0"
   },
   "publishConfig": {
     "access": "public",

@@ -2,7 +2,6 @@ import { IBaseObject } from '../../../shared/models';
 import { IChannel } from './channel.interface';
 import { IPathSelector } from './path.interface';
 
-
 export interface IChannelList extends Array<IChannel> {}
 
 export interface IChannelNode extends IBaseObject {

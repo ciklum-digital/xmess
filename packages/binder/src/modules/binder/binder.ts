@@ -1,8 +1,8 @@
 import { IXmess, IChannel } from '@xmess/core/dist/types';
+
 import { GlobalContext } from './classes/global-context.class';
 import { GlobalUtil } from './utils/global.util';
 import { IGlobalContext } from './interfaces/global-context.interface';
-
 
 export class BinderPlugin {
   private get globalContext(): IGlobalContext {

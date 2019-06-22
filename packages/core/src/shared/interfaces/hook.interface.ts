@@ -1,8 +1,8 @@
 export interface IHook {
-  call(...props: Array<any>): void;
+  call(...props: any[]): void;
   subscribe(subscriber: IHookSubscriber): void;
 }
 
 export interface IHookSubscriber {
-  (...props: Array<any>): void;
+  (...props: any[]): void;
 }
