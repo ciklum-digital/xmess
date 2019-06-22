@@ -2,6 +2,7 @@
   "name": "xmess",
   "version": "0.0.0",
   "private": true,
+  "workspaces": ["packages/*"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ciklum-digital/xmess.git"
@@ -29,11 +30,11 @@
   "scripts": {
     "commit": "npx git-cz",
     "link": "npx lerna link",
-    "bootstrap": "npx lerna bootstrap --hoist",
+    "bootstrap": "npx lerna bootstrap",
     "lint": "npx tslint packages/**/*.ts --project ./tsconfig.json",
     "lint:fix": "npx tslint packages/**/*.ts --project ./tsconfig.json --fix",
     "test": "npx jest",
-    "test:ci": "npm test | npx coveralls",
+    "test:ci": "yarn test | npx coveralls",
     "test:coverage": "jest --coverage",
     "build": "npx lerna run build",
     "publish": "npx lerna publish"

@@ -21,7 +21,7 @@
     "@xmess/core": "^0.1.7"
   },
   "peerDependencies": {
-    "@xmess/core": "~0.0.0"
+    "@xmess/core": "^0.1.6"
   },
   "publishConfig": {
     "access": "public",
