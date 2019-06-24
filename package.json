@@ -14,14 +14,11 @@
     "lint:fix": "yarn lint --fix",
     "test": "npx jest",
     "build": "npx lerna run build",
-    "lerna:link": "npx lerna link",
-    "lerna:bootstrap": "npx lerna bootstrap",
-    "lerna:publish": "npx lerna publish",
     "ci:lint": "yarn lint",
     "ci:test": "yarn test | npx coveralls",
     "ci:sonar": "npx sonar-scanner",
     "ci:build": "yarn build",
-    "ci:publish": "yarn lerna:publish"
+    "ci:publish": "npx lerna publish"
   },
   "dependencies": {
     "typescript": "3.4.5"
@@ -46,6 +43,8 @@
   },
   "husky": {
     "hooks": {
+      "precommit": "yarn lint",
+      "prepush": "yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
