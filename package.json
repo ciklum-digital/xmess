@@ -21,7 +21,7 @@
     "ci:publish": "npx lerna publish"
   },
   "dependencies": {
-    "typescript": "3.4.5"
+    "typescript": "3.5.2"
   },
   "devDependencies": {
     "@commitlint/cli": "8.0.0",
