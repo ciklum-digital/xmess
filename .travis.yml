@@ -4,10 +4,10 @@ cache:
   yarn: true
 
 addons:
- sonarcloud:
-   organization: ciklum-digital
-   token:
-     secure: $SONAR_TOKEN
+  sonarcloud:
+    organization: ciklum-digital
+    token:
+      secure: $SONAR_TOKEN
 
 before_install:
   - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
@@ -17,17 +17,17 @@ install:
   - yarn
 
 script:
-  - npm run lint
-  - npm run test:ci
-  - npm run sonar
-  - npm run build
+  - yarn ci:lint
+  - yarn ci:test
+  - yarn ci:sonar
+  - yarn ci:build
 
 before_deploy:
   - git checkout ${TRAVIS_BRANCH}
 
 deploy:
   provider: script
-  script: npm run publish
+  script: yarn ci:publish
   skip_cleanup: true
   on:
     branch: master

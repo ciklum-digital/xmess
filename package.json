@@ -1,25 +1,38 @@
 {
   "name": "xmess",
+  "description": "## Description",
   "version": "0.0.0",
+  "author": "Denis Vada <dvad@ciklum.com>",
+  "license": "MIT",
   "private": true,
   "workspaces": ["packages/*"],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ciklum-digital/xmess.git"
+  "homepage": "https://github.com/ciklum-digital/xmess#readme",
+  "main": "lerna.json",
+  "scripts": {
+    "commit": "npx git-cz",
+    "lint": "npx tslint packages/**/*.ts --project ./tsconfig.json",
+    "lint:fix": "yarn lint --fix",
+    "test": "npx jest",
+    "build": "npx lerna run build",
+    "ci:lint": "yarn lint",
+    "ci:test": "yarn test | npx coveralls",
+    "ci:sonar": "npx sonar-scanner",
+    "ci:build": "yarn build",
+    "ci:publish": "npx lerna publish"
   },
   "dependencies": {
-    "typescript": "3.4.5"
+    "typescript": "3.5.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/cli": "8.0.0",
+    "@commitlint/config-conventional": "8.0.0",
     "@types/jest": "24.0.13",
     "commitizen": "3.1.1",
     "coveralls": "3.0.4",
     "husky": "2.4.0",
     "jest": "24.8.0",
     "lerna": "3.14.1",
-    "lerna-changelog": "^0.8.2",
+    "lerna-changelog": "0.8.2",
     "npx": "10.2.0",
     "sonar-scanner": "3.1.0",
     "ts-jest": "24.0.2",
@@ -28,21 +41,10 @@
     "tslint-origin-ordered-imports-rule": "1.2.2",
     "tslint-sonarts": "1.9.0"
   },
-  "scripts": {
-    "commit": "npx git-cz",
-    "link": "npx lerna link",
-    "bootstrap": "npx lerna bootstrap",
-    "lint": "npx tslint packages/**/*.ts --project ./tsconfig.json",
-    "lint:fix": "npx tslint packages/**/*.ts --project ./tsconfig.json --fix",
-    "test": "npx jest",
-    "test:ci": "yarn test | npx coveralls",
-    "sonar": "npx sonar-scanner",
-    "test:coverage": "jest --coverage",
-    "build": "npx lerna run build",
-    "publish": "npx lerna publish"
-  },
   "husky": {
     "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -51,12 +53,7 @@
       "path": "node_modules/cz-conventional-changelog"
     }
   },
-  "description": "## Description",
   "bugs": {
     "url": "https://github.com/ciklum-digital/xmess/issues"
-  },
-  "homepage": "https://github.com/ciklum-digital/xmess#readme",
-  "main": "lerna.json",
-  "author": "Denis Vada <dvad@ciklum.com>",
-  "license": "MIT"
+  }
 }
