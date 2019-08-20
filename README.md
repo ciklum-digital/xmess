@@ -1,10 +1,10 @@
 <p align="center">
-    <a href="https://ciklum-digital.github.io/module-skeleton/">
+    <a href="https://ciklum-digital.github.io/xmess/">
         <img width="96" src="https://ciklum-digital.github.io/xmess/assets/images/icon.svg" alt="xmess icon">
     </a>    
 </p>
 
-<p align="center">connecting module</h3>
+<p align="center">Connect your modules</h3>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/xmess">
