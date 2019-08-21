@@ -21,6 +21,8 @@
 <body>
 <div id="app"></div>
 <script>
+  var docsBaseUrl = 'https://raw.githubusercontent.com/ciklum-digital/xmess/master';
+
   window.$docsify = {
     homepage: 'getting_started.md',
     repo: 'https://github.com/ciklum-digital/xmess',
@@ -33,12 +35,12 @@
     maxLevel: 4,
     alias: {
       '/.*/_sidebar.md': '/_sidebar.md',
-      '.*?/angular/getting_started': 'https://raw.githubusercontent.com/ciklum-digital/xmess/master/packages/angular/README.md',
-      '.*?/binder/getting_started': 'https://raw.githubusercontent.com/ciklum-digital/xmess/master/packages/binder/README.md',
-      '.*?/core/getting_started': 'https://raw.githubusercontent.com/ciklum-digital/xmess/master/packages/core/README.md',
-      '.*?/CODE_OF_CONDUCT': 'https://raw.githubusercontent.com/ciklum-digital/xmess/master/CODE_OF_CONDUCT.md',
-      '.*?/CONTRIBUTING': 'https://raw.githubusercontent.com/ciklum-digital/xmess/master/CONTRIBUTING.md',
-      '.*?/CHANGELOG': 'https://raw.githubusercontent.com/ciklum-digital/xmess/master/CHANGELOG.md',
+      '.*?/angular/getting_started': docsBaseUrl + '/packages/angular/README.md',
+      '.*?/binder/getting_started': docsBaseUrl + '/packages/binder/README.md',
+      '.*?/core/getting_started': docsBaseUrl + '/packages/core/README.md',
+      '.*?/CODE_OF_CONDUCT': docsBaseUrl + '/CODE_OF_CONDUCT.md',
+      '.*?/CONTRIBUTING': docsBaseUrl + '/CONTRIBUTING.md',
+      '.*?/CHANGELOG': docsBaseUrl + '/CHANGELOG.md',
     },
     search: {
       paths: 'auto',
