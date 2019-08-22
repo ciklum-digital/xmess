@@ -1,19 +1,12 @@
-# @xmess/core
+# @xmess/angular
 
-## Table of contents
+## Overview
 
-1. [Description](#description)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [API](#api)
+[there the place for OVERVIEW dateils..]
 
+[please fill it for your module]
 
-### Description
----
-[should be added here]
-
-### Installation
----
+## Usage
 
 1. Installing project dependencies
 ```bash
@@ -30,9 +23,6 @@ import { XmessModule } from ng;
   ],
 })
 ```
-
-### Usage
----
 
 ```typescript
 import { XmessService } from '@xmess/angular';
@@ -60,7 +50,17 @@ export class SomeComponent() {
 }
 ```
 
-### API
----
+## API
+
+[there the place for API dateils..]
+
+[please fill it for your module]   
+
+
+## Examples
+
+[there the place for EXAMPLES dateils..]    
+
+[please fill it for your module]   
 
 

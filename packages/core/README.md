@@ -1,18 +1,13 @@
 # @xmess/core
 
-## Table of contents
 
-1. [Description](#description)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [API](#api)
+## Overview
 
+[there the place for OVERVIEW dateils..]
 
-### Description
----
+[please fill it for your module]
 
-### Installation
----
+## Usage
 
 1. Installing project dependency
 ```bash
@@ -25,9 +20,6 @@ import { Xmess } from '@xmess/core';
 
 const xmess = new Xmess('some-id');
 ```
-
-### Usage
----
 
 ```typescript
 import { IChannelMessage } from '@xmess/core/dist/types';
@@ -43,7 +35,19 @@ function sendMessage(channelPath, payload) {
 }
 ```
 
-### API
----
+
+## API
+
+[there the place for API dateils..]
+
+[please fill it for your module]   
+
+
+## Examples
+
+[there the place for EXAMPLES dateils..]    
+
+[please fill it for your module]   
+
 
 
