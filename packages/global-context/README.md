@@ -1,6 +1,5 @@
 # @xmess/global-context
 
-
 ## Overview
 
 [there the place for OVERVIEW dateils..]
