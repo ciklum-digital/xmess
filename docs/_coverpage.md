@@ -1,16 +1,21 @@
-<p align="center">
-    <a href="https://ciklum-digital.github.io/xmess/">
-        <img width="440" src="assets/images/xmess.png" alt="xmess icon">
-    </a>    
-</p>
-
-> Multiple applications manager
-
-- 🚀 Easy start to communicate between your applications
-- ⚡️️ Rich configuration
-
-<div style="" class="buttons">
-  <a href="#/README"><span>Get Started</span></a>
+<div class="ciklum-logo">
+  <div class="logo"></div>
 </div>
 
-![color](#ffffff)
+![logo](assets/images/icon.svg)
+
+<h1 class="label">
+  XMESS
+</h1>
+
+> connecting module
+
+- 🔗 Event based module communication
+- ⚡️️ Rich configuration set up
+- 🚀 Rich API
+- 💎 Best practices support
+
+<div class="buttons">
+  <a href="https://github.com/ciklum-digital/xmess" target="_blank"><span>GitHub</span></a>
+  <a href="#/README"><span>Get Started</span></a>
+</div>

@@ -1,18 +1,13 @@
 # @xmess/global-context
 
-## Table of contents
 
-1. [Description](#description)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [API](#api)
+## Overview
 
+[there the place for OVERVIEW dateils..]
 
-### Description
----
+[please fill it for your module]
 
-### Installation
----
+## Usage
 
 1. Installing project dependencies
 ```bash
@@ -30,9 +25,6 @@ const xmess = new Xmess('some-id', {
   ],
 });
 ```
-
-### Usage
----
 
 #### Without BinderPlugin
 ```typescript
@@ -73,7 +65,17 @@ xmess2.channel('some-channel').publish('some-message');
 // xmess1 is sharing messages to global context
 ```
 
-### API
----
 
 
+## API
+
+[there the place for API dateils..]
+
+[please fill it for your module]   
+
+
+## Examples
+
+[there the place for EXAMPLES dateils..]    
+
+[please fill it for your module]   
