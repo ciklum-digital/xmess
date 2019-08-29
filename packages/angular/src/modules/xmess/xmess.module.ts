@@ -7,7 +7,7 @@ const configToken = new InjectionToken('@xmess/angular/config');
 
 @NgModule()
 export class XmessModule {
-  public static forRoot(id: string, options: IXmessOptions): ModuleWithProviders {
+  public static forRoot(id: string, options?: IXmessOptions): ModuleWithProviders {
     return {
       ngModule: XmessModule,
       providers: [

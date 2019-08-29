@@ -19,8 +19,14 @@
   },
   "devDependencies": {
     "@angular/core": "7.2.15",
+    "@angular/compiler": "7.2.15",
+    "@angular/common": "7.2.15",
+    "@angular/platform-browser": "7.2.15",
+    "@angular/platform-browser-dynamic": "7.2.15",
     "@xmess/core": "^0.1.7",
-    "rxjs": "6.5.2"
+    "jest-preset-angular": "7.1.1",
+    "rxjs": "6.5.2",
+    "zone.js": "0.10.2"
   },
   "peerDependency": {
     "rxjs": "~6.3.0",

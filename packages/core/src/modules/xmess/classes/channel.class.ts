@@ -9,7 +9,7 @@ export class Channel implements IChannel {
     public readonly publish: (payload: any) => void,
   ) {}
 
-  public setInitialMessage(initialMessage: IChannelMessage) {
+  public setInitialMessage(initialMessage: IChannelMessage): void {
     if (!this.lastMessage) {
       this.lastMessage = initialMessage;
     } else {

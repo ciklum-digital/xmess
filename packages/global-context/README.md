@@ -1,4 +1,4 @@
-# @xmess/binder
+# @xmess/global-context
 
 ## Table of contents
 
@@ -16,13 +16,13 @@
 
 1. Installing project dependencies
 ```bash
-$ npm i @xmess/binder --save
+$ npm i @xmess/global-context --save
 ```
 
 2. Import `BinderPlugin` and add to plugins
 ```typescript
 import { Xmess } from '@xmess/core';
-import { BinderPlugin } from '@xmess/binder';
+import { BinderPlugin } from '@xmess/global-context';
 
 const xmess = new Xmess('some-id', {
   plugins: [
@@ -51,7 +51,7 @@ xmess2.channel('some-channel').publish('some-message');
 
 #### With BinderPlugin
 ```typescript
-import { BinderPlugin } from '@xmess/binder';
+import { BinderPlugin } from '@xmess/global-context';
 
 const xmess1 = new Xmess('xmess-1', {
   plugins: [

@@ -11,14 +11,13 @@ export class Xmess implements IXmess {
     return new Channel(path, onChannelPublish);
   }
 
-  public hooks = {
+  private channelTree = new ChannelTree();
+  private hooks = {
     initialize: new Hook(),
     channelCreation: new Hook(),
     publish: new Hook(),
     destroy: new Hook(),
   };
-
-  private channelTree = new ChannelTree();
 
   constructor(
     public readonly id: string,
@@ -26,6 +25,10 @@ export class Xmess implements IXmess {
   ) {
     this.preInitialize();
     this.initialize();
+  }
+
+  public listenHook(hookName: string, callback): void {
+    this.hooks[hookName].subscribe(callback);
   }
 
   public channel(path: string): IChannel {

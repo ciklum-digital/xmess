@@ -4,17 +4,12 @@ import { IHook } from '../../../shared/interfaces/hook.interface';
 
 export interface IXmess extends IBaseObject {
   readonly id: string;
-  readonly hooks: IXmessHooks;
+  listenHook(hookName: XmessHook, callback: (...props: any[]) => void): void;
   channel(path: string): IChannel;
   publish(message: IChannelMessage): void;
 }
 
-export interface IXmessHooks {
-  initialize: IHook;
-  channelCreation: IHook;
-  publish: IHook;
-  destroy: IHook;
-}
+type XmessHook = 'initialize' | 'publish' | 'channelCreation' | 'destroy';
 
 export interface IXmessOptions {
   plugins: IXmessPlugin[];

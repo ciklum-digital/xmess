@@ -6,36 +6,9 @@ import { PathUtil } from '../utils/path.util';
 export class ChannelTree implements IChannelTree {
   private rootChannelNode: IChannelNode = {};
 
-  public getChannelList(pathSelector: IPathSelector, channelNode = this.rootChannelNode): IChannelList {
-    let channelList: IChannelList = [];
-
-    if (pathSelector.length === 0) {
-      const channel = this.getChannelFromNode(channelNode);
-      channelList = channel ? [channel] : channelList;
-
-      return channelList;
-    }
-
-    const pathItem = pathSelector[0];
-    const childPathSelector = PathUtil.getChildPathSelector(pathSelector);
-    const baseChannelNode = channelNode[pathItem];
-    if (baseChannelNode) {
-      channelList = this.getChannelList(childPathSelector, baseChannelNode);
-    }
-
-    const singleLevelChannelNode = channelNode['+'];
-    if (singleLevelChannelNode) {
-      const singleLevelChannelList = this.getChannelList(childPathSelector, singleLevelChannelNode);
-      channelList = [...channelList, ...singleLevelChannelList];
-    }
-
-    const multiLevelChannelNode = channelNode['#'];
-    if (multiLevelChannelNode) {
-      const channel = this.getChannelFromNode(multiLevelChannelNode);
-      channelList = channel ? [...channelList, channel] : channelList;
-    }
-
-    return channelList;
+  public addChannel(pathSelector: IPathSelector, channel: IChannel): void {
+    const channelNode = this.getChannelNode(pathSelector);
+    channelNode.__channel__ = channel;
   }
 
   public getChannel(pathSelector: IPathSelector): IChannel | null {
@@ -44,9 +17,35 @@ export class ChannelTree implements IChannelTree {
     return this.getChannelFromNode(channelNode);
   }
 
-  public addChannel(pathSelector: IPathSelector, channel: IChannel): void {
-    const channelNode = this.getChannelNode(pathSelector);
-    channelNode.__channel__ = channel;
+  public getChannelList(pathSelector: IPathSelector): IChannelList {
+    return this.getChannelListByPathSelector(pathSelector, this.rootChannelNode);
+  }
+
+  private getChannelListByPathSelector(pathSelector: IPathSelector, channelNode: IChannelNode): IChannelList {
+    const childPathSelector = PathUtil.getChildPathSelector(pathSelector);
+    const baseChannelList = this.getChannelListFromNode(channelNode[pathSelector[0]], childPathSelector);
+    const singleLevelWildcardChannelList = this.getChannelListFromNode(channelNode['+'], childPathSelector);
+    const multiLevelWildcardChannelList = this.getChannelListFromNode(channelNode['#']);
+
+    return [
+      ...baseChannelList,
+      ...singleLevelWildcardChannelList,
+      ...multiLevelWildcardChannelList,
+    ];
+  }
+
+  private getChannelListFromNode(channelNode, pathSelector = []): IChannelList {
+    let channelList: IChannelList = [];
+
+    const hasPathSelector = pathSelector.length !== 0;
+    if (channelNode && hasPathSelector) {
+      channelList = this.getChannelListByPathSelector(pathSelector, channelNode);
+    } else if (channelNode) {
+      const channel = this.getChannelFromNode(channelNode);
+      channelList = channel ? [channel] : channelList;
+    }
+
+    return channelList;
   }
 
   private getChannelFromNode(channelNode: IChannelNode): IChannel | null {

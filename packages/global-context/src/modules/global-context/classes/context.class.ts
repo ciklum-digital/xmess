@@ -1,8 +1,8 @@
 import { IXmess, IChannelMessage } from '@xmess/core/dist/types';
 
-import { IGlobalContext } from '../interfaces/global-context.interface';
+import { IContext } from '../interfaces/context.interface';
 
-export class GlobalContext implements IGlobalContext {
+export class Context implements IContext {
   private lastMessages: { [key: string]: IChannelMessage } = {};
   private xmessInstanceList: IXmess[] = [];
 
@@ -14,6 +14,10 @@ export class GlobalContext implements IGlobalContext {
     }
 
     this.xmessInstanceList.push(xmessInstance);
+  }
+
+  public removeInstance(xmessId: string): void {
+    this.xmessInstanceList = this.xmessInstanceList.filter((xmessInstance: IXmess) => xmessInstance.id !== xmessId);
   }
 
   public update(message: IChannelMessage): void {
@@ -29,10 +33,6 @@ export class GlobalContext implements IGlobalContext {
 
   public getLastMessage(channelPath: string): IChannelMessage {
     return this.lastMessages[channelPath];
-  }
-
-  public removeInstance(xmessId: string): void {
-    this.xmessInstanceList = this.xmessInstanceList.filter((xmessInstance: IXmess) => xmessInstance.id !== xmessId);
   }
 
   private isIdUnique(xmessId: string): boolean {
