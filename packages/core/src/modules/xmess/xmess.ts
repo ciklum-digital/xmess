@@ -3,7 +3,7 @@ import { ChannelTree } from './classes/channel-tree.class';
 import { PathUtil } from './utils/path.util';
 import { Hook } from '../../shared/classes/hook.class';
 
-import { IXmess, IXmessOptions } from './interfaces/xmess.interface';
+import { IXmess, XmessHookName, IXmessOptions } from './interfaces/xmess.interface';
 import { IChannel, IChannelMessage } from './interfaces/channel.interface';
 
 export class Xmess implements IXmess {
@@ -27,7 +27,7 @@ export class Xmess implements IXmess {
     this.initialize();
   }
 
-  public listenHook(hookName: string, callback): void {
+  public listenHook(hookName: XmessHookName, callback): void {
     this.hooks[hookName].subscribe(callback);
   }
 
