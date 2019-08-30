@@ -1,17 +1,16 @@
 language: node_js
-node_js: "10"
+node_js: '12'
 cache:
   yarn: true
 
 addons:
-  sonarcloud:
-    organization: ciklum-digital
+  sonarqube:
     token:
       secure: $SONAR_TOKEN
 
 before_install:
   - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git"
-  - npm config set //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+  - yarn config set registry "https://registry.npmjs.org/:_authToken=${NPM_TOKEN}"
 
 install:
   - yarn
@@ -19,7 +18,7 @@ install:
 script:
   - yarn ci:lint
   - yarn ci:test
-  - yarn ci:sonar
+  - yarn ci:sonar -D sonar.host.url=$SONAR_HOST_URL -X
   - yarn ci:build
 
 before_deploy:
