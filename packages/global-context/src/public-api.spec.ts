@@ -1,5 +1,7 @@
-describe('[public-api]', () => {
-  it('fake-test', () => {
-    expect(true).toBe(true);
+import * as publicApi from './public-api';
+
+describe('[Public Api]', () => {
+  it('should exports "Xmess"', () => {
+    expect(publicApi.GlobalContextPlugin).toBeTruthy();
   });
 });

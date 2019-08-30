@@ -1,7 +1,7 @@
+import { PathUtil } from '../utils/path.util';
 import { IChannel } from '../interfaces/channel.interface';
 import { IChannelTree, IChannelNode, IChannelList } from '../interfaces/channel-tree.interface';
 import { IPathSelector } from '../interfaces/path.interface';
-import { PathUtil } from '../utils/path.util';
 
 export class ChannelTree implements IChannelTree {
   private rootChannelNode: IChannelNode = {};
@@ -34,7 +34,7 @@ export class ChannelTree implements IChannelTree {
     ];
   }
 
-  private getChannelListFromNode(channelNode, pathSelector = []): IChannelList {
+  private getChannelListFromNode(channelNode: IChannelNode, pathSelector: IPathSelector = []): IChannelList {
     let channelList: IChannelList = [];
 
     const hasPathSelector = pathSelector.length !== 0;

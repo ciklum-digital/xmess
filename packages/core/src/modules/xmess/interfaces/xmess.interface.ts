@@ -1,6 +1,5 @@
 import { IChannel, IChannelMessage } from './channel.interface';
-import { IBaseObject } from '../../../shared/models';
-import { IHook } from '../../../shared/interfaces/hook.interface';
+import { IBaseObject } from './base-object.interface';
 
 export interface IXmess extends IBaseObject {
   readonly id: string;

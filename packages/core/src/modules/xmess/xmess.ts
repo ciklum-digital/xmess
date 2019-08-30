@@ -1,10 +1,11 @@
 import { Channel } from './classes/channel.class';
 import { ChannelTree } from './classes/channel-tree.class';
 import { PathUtil } from './utils/path.util';
-import { Hook } from '../../shared/classes/hook.class';
+import { Hook } from './classes/hook.class';
 
 import { IXmess, XmessHookName, IXmessOptions } from './interfaces/xmess.interface';
 import { IChannel, IChannelMessage } from './interfaces/channel.interface';
+import { IHookSubscriber } from './interfaces/hook.interface';
 
 export class Xmess implements IXmess {
   protected static channelFactory(path: string, onChannelPublish: (payload: any) => void): IChannel {
@@ -27,7 +28,7 @@ export class Xmess implements IXmess {
     this.initialize();
   }
 
-  public listenHook(hookName: XmessHookName, callback): void {
+  public listenHook(hookName: XmessHookName, callback: IHookSubscriber): void {
     this.hooks[hookName].subscribe(callback);
   }
 
@@ -55,9 +56,7 @@ export class Xmess implements IXmess {
     }
 
     const channelList = this.channelTree.getChannelList(pathSelector);
-    channelList.forEach((channel: IChannel) => {
-      channel.next(message);
-    });
+    channelList.forEach(channel => channel.next(message));
 
     this.hooks.publish.call(isInternal, message);
   }

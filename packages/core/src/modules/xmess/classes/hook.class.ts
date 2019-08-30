@@ -4,7 +4,7 @@ export class Hook implements IHook {
   private subscribers: IHookSubscriber[] = [];
 
   public call(...props: any[]): void {
-    this.subscribers.forEach(subscriber => subscriber(...props));
+    this.subscribers.forEach((subscriber: IHookSubscriber) => subscriber(...props));
   }
 
   public subscribe(subscriber: IHookSubscriber): void {
