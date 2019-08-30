@@ -1,2 +1,2 @@
-export { XmessModule } from './modules/xmess/xmess.module';
-export { XmessService } from './modules/xmess/services/xmess.service';
+export { XmessModule } from './xmess.module';
+export { XmessService } from './services/xmess.service';

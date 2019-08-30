@@ -1,1 +1,1 @@
-export { Xmess } from './modules/xmess/xmess';
+export { Xmess } from './xmess';
