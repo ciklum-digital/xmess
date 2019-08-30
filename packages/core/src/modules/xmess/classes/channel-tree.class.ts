@@ -1,3 +1,6 @@
+import * as get from 'lodash/get';
+import * as set from 'lodash/set';
+
 import { PathUtil } from '../utils/path.util';
 import { IChannel } from '../interfaces/channel.interface';
 import { IChannelTree, IChannelNode, IChannelList } from '../interfaces/channel-tree.interface';
@@ -6,15 +9,18 @@ import { IPathSelector } from '../interfaces/path.interface';
 export class ChannelTree implements IChannelTree {
   private readonly rootChannelNode: IChannelNode = {};
 
+  private static getChannelFromNode(channelNode: IChannelNode): IChannel | null {
+    return channelNode.__channel__ || null;
+  }
+
   public addChannel(pathSelector: IPathSelector, channel: IChannel): void {
-    const channelNode = this.getChannelNode(pathSelector);
-    channelNode.__channel__ = channel;
+    set(this.rootChannelNode, [...pathSelector, '__channel__'], channel);
   }
 
   public getChannel(pathSelector: IPathSelector): IChannel | null {
-    const channelNode = this.getChannelNode(pathSelector);
+    const channelNode: IChannelNode = get(this.rootChannelNode, pathSelector);
 
-    return this.getChannelFromNode(channelNode);
+    return channelNode ? ChannelTree.getChannelFromNode(channelNode) : null;
   }
 
   public getChannelList(pathSelector: IPathSelector): IChannelList {
@@ -41,30 +47,10 @@ export class ChannelTree implements IChannelTree {
     if (channelNode && hasPathSelector) {
       channelList = this.getChannelListByPathSelector(pathSelector, channelNode);
     } else if (channelNode) {
-      const channel = this.getChannelFromNode(channelNode);
+      const channel = ChannelTree.getChannelFromNode(channelNode);
       channelList = channel ? [channel] : channelList;
     }
 
     return channelList;
-  }
-
-  private getChannelFromNode(channelNode: IChannelNode): IChannel | null {
-    return channelNode.__channel__ || null;
-  }
-
-  private getChannelNode(pathSelector: IPathSelector, channelNode = this.rootChannelNode): IChannelNode {
-    const key = pathSelector[0];
-    const childPathSelector = PathUtil.getChildPathSelector(pathSelector);
-
-    if (!channelNode[key]) {
-      channelNode[key] = {};
-    }
-
-    const isLastPathSlise = childPathSelector.length === 0;
-    if (isLastPathSlise) {
-      return channelNode[key];
-    }
-
-    return this.getChannelNode(childPathSelector, channelNode[key]);
   }
 }

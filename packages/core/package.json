@@ -17,6 +17,9 @@
     "prebuild": "rm -r -f ./dist",
     "build": "tsc"
   },
+  "dependencies": {
+    "lodash": "4.17.15"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/",

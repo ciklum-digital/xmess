@@ -47,6 +47,17 @@ describe('[ChannelTree]', () => {
       expect(channelList).toStrictEqual([channel]);
     });
 
+    it('should return empty "channelList" if nothing found according to "pathSelector"', () => {
+      const channelPathSelector = ['path1', 'path2', 'path3'];
+      const pathSelector = channelPathSelector.slice(0, 1);
+
+      const channel = { path: channelPathSelector.join('/') } as IChannel;
+      channelTree.addChannel(channelPathSelector, channel);
+
+      const channelList = channelTree.getChannelList(pathSelector);
+      expect(channelList).toStrictEqual([]);
+    });
+
     it('should return "channelList" with single level wildcard channel matched to "pathSelector"', () => {
       const pathSelectorWithSingleLevelWildCard = ['path1', '+', 'path3'];
       const matchedChannelToSingleLevelWildCard = ['path1', 'path2', 'path3'];
