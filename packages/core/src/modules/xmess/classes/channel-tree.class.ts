@@ -4,7 +4,7 @@ import { IChannelTree, IChannelNode, IChannelList } from '../interfaces/channel-
 import { IPathSelector } from '../interfaces/path.interface';
 
 export class ChannelTree implements IChannelTree {
-  private rootChannelNode: IChannelNode = {};
+  private readonly rootChannelNode: IChannelNode = {};
 
   public addChannel(pathSelector: IPathSelector, channel: IChannel): void {
     const channelNode = this.getChannelNode(pathSelector);

@@ -13,7 +13,7 @@ describe('[XmessModule]', () => {
     beforeEach(() => {
       testBed = TestBed.configureTestingModule({
         imports: [
-          XmessModule.forRoot(xmessId),
+          XmessModule.forRoot({ id: xmessId }),
         ],
       });
     });

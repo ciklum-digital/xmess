@@ -1,8 +1,8 @@
 import { IChannel, IChannelMessage, IChannelSubscriber } from '../interfaces/channel.interface';
 
 export class Channel implements IChannel {
-  private lastMessage: IChannelMessage;
-  private subscribers: IChannelSubscriber[] = [];
+  private readonly lastMessage: IChannelMessage;
+  private readonly subscribers: IChannelSubscriber[] = [];
 
   constructor(
     public readonly path: string,

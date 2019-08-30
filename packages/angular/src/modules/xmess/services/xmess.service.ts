@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Xmess } from '@xmess/core';
 
 import { ObservableChannel } from '../classes/observable-channel.class';
+import { IXmessModuleConfig } from '../interfaces/xmess-module.interface';
 
 @Injectable()
 export class XmessService extends Xmess {
@@ -9,7 +10,7 @@ export class XmessService extends Xmess {
     return new ObservableChannel(path, onPublish);
   }
 
-  constructor(private config: any) {
+  constructor(private readonly config: IXmessModuleConfig) {
     super(config.id, config.options);
   }
 

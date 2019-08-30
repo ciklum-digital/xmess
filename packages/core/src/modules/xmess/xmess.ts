@@ -12,8 +12,8 @@ export class Xmess implements IXmess {
     return new Channel(path, onChannelPublish);
   }
 
-  private channelTree = new ChannelTree();
-  private hooks = {
+  private readonly channelTree = new ChannelTree();
+  private readonly hooks = {
     initialize: new Hook(),
     channelCreation: new Hook(),
     publish: new Hook(),

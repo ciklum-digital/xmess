@@ -3,7 +3,7 @@ import { IXmess, IChannelMessage } from '@xmess/core/dist/types';
 import { IContext } from '../interfaces/context.interface';
 
 export class Context implements IContext {
-  private lastMessages: { [key: string]: IChannelMessage } = {};
+  private readonly lastMessages: { [key: string]: IChannelMessage } = {};
   private xmessInstanceList: IXmess[] = [];
 
   public registerInstance(xmessInstance: IXmess): void {
