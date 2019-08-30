@@ -17,9 +17,9 @@ install:
 
 script:
   - yarn ci:lint
+  - yarn ci:build
   - yarn ci:test
   - yarn ci:sonar -D sonar.host.url=$SONAR_HOST_URL -X
-  - yarn ci:build
 
 before_deploy:
   - git checkout ${TRAVIS_BRANCH}
