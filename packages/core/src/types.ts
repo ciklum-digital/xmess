@@ -1,2 +1,2 @@
-export { IXmess, IXmessPlugin, IXmessOptions } from './modules/xmess/interfaces/xmess.interface';
-export { IChannel, IChannelMessage } from './modules/xmess/interfaces/channel.interface';
+export { IXmess, IXmessPlugin, IXmessOptions } from './interfaces/xmess.interface';
+export { IChannel, IChannelMessage } from './interfaces/channel.interface';

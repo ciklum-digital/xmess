@@ -1,1 +1,1 @@
-export { GlobalContextPlugin } from './modules/global-context/global-context.plugin';
+export { GlobalContextPlugin } from './global-context.plugin';
