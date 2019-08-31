@@ -3,10 +3,7 @@ module.exports = {
   testEnvironment: 'node',
   collectCoverage: true,
   coverageReporters: [
-    'text',
     'text-summary',
-    'text-lcov',
-    'lcov',
   ],
   coverageDirectory: '<rootDir>/coverage',
   collectCoverageFrom: [

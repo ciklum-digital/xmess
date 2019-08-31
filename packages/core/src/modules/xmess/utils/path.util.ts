@@ -8,9 +8,9 @@ export namespace PathUtil {
   export function hasWildCard(pathSelector: IPathSelector): boolean {
     return pathSelector.some((path) => {
       const isMultiLevelPath = path === '#';
-      const isSignleLevelPath = path === '+';
+      const isSingleLevelPath = path === '+';
 
-      return isSignleLevelPath || isMultiLevelPath;
+      return isSingleLevelPath || isMultiLevelPath;
     });
   }
 

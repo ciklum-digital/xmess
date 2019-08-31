@@ -1,8 +1,8 @@
-import { IBaseObject } from '../../../shared/models';
+import { IBaseObject } from './base-object.interface';
 import { IChannel } from './channel.interface';
 import { IPathSelector } from './path.interface';
 
-export interface IChannelList extends Array<IChannel> {}
+export type IChannelList = IChannel[];
 
 export interface IChannelNode extends IBaseObject {
   __channel__?: IChannel;

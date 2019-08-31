@@ -1,1 +1,1 @@
-export interface IPathSelector extends Array<string> {}
+export type IPathSelector = string[];

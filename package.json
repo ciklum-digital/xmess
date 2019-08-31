@@ -15,7 +15,7 @@
     "test": "npx jest",
     "build": "npx lerna run build",
     "ci:lint": "yarn lint",
-    "ci:test": "yarn test | npx coveralls",
+    "ci:test": "yarn test --config=./jest.ci.config.js | npx coveralls",
     "ci:sonar": "npx sonar-scanner",
     "ci:build": "yarn build",
     "ci:publish": "npx lerna publish"
