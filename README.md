@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://ciklum-digital.github.io/xmess/">
+    <a href="https://ciklum-digital.github.io/xmess/"> 
         <img width="96" src="https://ciklum-digital.github.io/xmess/assets/images/icon.svg" alt="xmess icon">
     </a>    
 </p>
