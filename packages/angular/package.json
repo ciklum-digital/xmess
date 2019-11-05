@@ -1,6 +1,6 @@
 {
   "name": "@xmess/angular",
-  "version": "2.0.1",
+  "version": "0.2.0",
   "description": "> TODO: description",
   "author": "Denis Vada <dvad@ciklum.com>",
   "homepage": "",
@@ -23,7 +23,7 @@
     "@angular/core": "7.2.15",
     "@angular/platform-browser": "7.2.15",
     "@angular/platform-browser-dynamic": "7.2.15",
-    "@xmess/core": "^2.0.1",
+    "@xmess/core": "^0.2.0",
     "jest-preset-angular": "7.1.1",
     "rxjs": "6.5.2",
     "zone.js": "0.10.2"
