@@ -2,7 +2,7 @@
 
 ## Overview
 
-[there the place for OVERVIEW details...]
+[there the place for OVERVIEW details..]
 
 [please fill it for your module]
 
