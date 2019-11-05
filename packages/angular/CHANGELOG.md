@@ -3,14 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [2.0.1](https://github.com/ciklum-digital/xmess/compare/v0.2.0...v2.0.1) (2019-11-05)
-
-**Note:** Version bump only for package @xmess/angular
-
-
-
-
-
 # [0.2.0](https://github.com/ciklum-digital/xmess/compare/v0.1.8...v0.2.0) (2019-08-31)
 
 

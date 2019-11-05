@@ -23,6 +23,7 @@ script:
 
 before_deploy:
   - git checkout ${TRAVIS_BRANCH}
+  - yarn config set registry "https://registry.npmjs.org/:_authToken=${NPM_TOKEN}"
 
 deploy:
   provider: script
