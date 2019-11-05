@@ -6,7 +6,7 @@
 
 <p align="center">Connect your modules</h3>
 
-<p align="center">
+<p align="center"> 
   <a href="https://www.npmjs.com/package/xmess">
     <img src="https://img.shields.io/npm/v/xmess.svg?style=flat" alt="npm" />
   </a>
