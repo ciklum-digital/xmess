@@ -1,6 +1,6 @@
 {
   "name": "@xmess/global-context",
-  "version": "0.2.0",
+  "version": "2.0.1",
   "description": "> TODO: description",
   "author": "Denis Vada <dvad@ciklum.com>",
   "homepage": "",
@@ -18,7 +18,7 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@xmess/core": "^0.2.0"
+    "@xmess/core": "^2.0.1"
   },
   "peerDependencies": {
     "@xmess/core": "^0.1.6"
